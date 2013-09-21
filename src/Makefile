@@ -445,7 +445,7 @@ endif
 
 DIR=install -d -m 0755 -o root
 FILE=install -m 0644 -o root
-TREE=cp -dR
+TREE=cp -dRv
 CONFIGFILE=install -m 0644
 EXE=install -m 0755 -o root
 SETUID=install -m 4755 -o root
@@ -597,7 +597,7 @@ install-python: install-dirs
 	$(FILE) ../share/axis/images/*.gif ../share/axis/images/*.xbm ../share/axis/images/*.ngc $(DESTDIR)$(datadir)/axis/images
 	$(FILE) ../share/axis/tcl/*.tcl $(DESTDIR)$(datadir)/axis/tcl
 	$(FILE) ../share/gscreen/images/*.gif $(DESTDIR)$(datadir)/gscreen/images
-	$(TREE) ../share/gscreen/skins/ $(DESTDIR)$(datadir)/gscreen/
+	$(TREE) ../share/gscreen/skins/* $(DESTDIR)$(datadir)/gscreen/skins
 endif
 
 install-kernel-dep:
